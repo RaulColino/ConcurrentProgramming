@@ -1,2 +1,2 @@
 # ConcurrentProgramming
-Concurrent Programming class exercises
+Concurrent Programming exercises
