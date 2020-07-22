@@ -1,47 +1,50 @@
-# ConcurrentProgramming
+# Concurrent programming
 
-Concurrent Programming exercises
-## Final project: Simulation of a _Formula One_ race
+Concurrent programming exercises and final project.
+## Final project: Simulation of a  _Formula One_ race
 
-### Clase:
+### Class:
 
-#### •	Main
+#### • Main
 
-Crea las instancias de las clases con los distintos parámetros de la carrera (número de coches, número de tramos, número de carriles del circuito, numero de vueltas y eventos climáticos). Crea los hilos correspondientes: hilo de la carrera, hilo del juez e hilo de entrada por teclado. Por último, pone en marcha los hilos y espera su finalización. Los hilos del juez y de la carrera deben terminar siempre, tanto si se interrumpe el proceso de la carrera como si no.
+Creates the instances of the classes with the different parameters of the race (number of cars, number of racetracks, number of lanes of the receway, number of laps and weather events). Creates the corresponding threads: race thread, judge thread, and keyboard input thread. Finally, start the threads and wait for them to complete. The threads of the judge and the race must always end, whether or not the process of the race is interrupted.
 
-#### •	RaceJudge
+#### • RaceJudge
 
-Espera a que se creen y se lancen las tareas de cada vehículo al ScheduledThreadPool. 
-Una vez hecho lo anterior se inicia una cuenta atrás tras la cual todos los coches empiezan a correr. Tras esto, espera a la clasificación y finalización de los coches. Esta lógica esta implementada con CountDownLatch;
+Waits for each vehicle's tasks to be created and started in ScheduledThreadPool.
+Once this is done, a countdown begins, after which all the cars start to run. After this, it waits for the ranking and completion of the cars. This logic is implemented with CountDownLatch.
 
-#### •	Race
+#### • Race
 
-Tras crear e inicializar los vehículos y tramos del circuito, esta clase, mediante un ScheduledThreadPool, lanza tareas programadas cada 5s para cada vehículo, una tarea para cada impresión del ranking cada 4s y un evento climático en el instante indicado en el programa principal (si es de lluvia o lluvia torrencial).  Después de ello espera a que los vehículos terminen la carrera antes de hacer shutdown() al ejecutor.
-
-
-
-#### •	Score
-
-Muestra las posiciones de los vehículos. Por cada vehículo se imprime su posición, su nombre, si ha adelantado o ha sido adelantado (representado por un triángulo hacia arriba ▲ y triangulo hacia abajo ▼ respectivamente), vuelta por la que va, distancia recorrida, distancia que le queda para terminar la carrera (exceptuando la vuelta extra) o si ya paso la meta, se indica la distancia restante de la vuelta extra. También se indica la velocidad, tramo por el que va, combustible y si está en boxes.
-
-Para mostrar los resultados se utiliza un stream creado a partir de una copia estática de la colección de vehículos de la clase Race. En el stream ordenamos los vehículos (en función de su posición en la carrera) de tal manera que los vehículos que van por delante en la carrera son los primeros en ser procesados. El stream es secuencial y no paralelo ya que con tan pocos datos a procesar no resulta eficiente.
- 
-
-#### •	Vehicle
-
-Cada vehículo tiene una velocidad en recta y una velocidad en curva, un valor máximo de combustible y un nombre fijos. A lo largo de la carrera cambia su distancia recorrida, su combustible, su velocidad, el tramo en el que esta y su espera restante en boxes (0 si no está en boxes).
-Antes de correr, los vehículos esperan a la señal del juez. Una vez empezada la carrera los vehículos se mueven “por turnos” y deciden si pueden avanzar (dependiendo de si tienen obstruido el paso por vehículos de delante o no), si tienen que ir a boxes o si ya han terminado la carrera. Las posiciones finales se obtienen a partir de un CountDownLatch del juez.
-Los vehículos utilizan un método sincronizado de la clase Race al avanzar de tal manera que cuando un vehículo decide si puede avanzar x unidades de distancia o no, los demás vehículos no se mueven, evitando así posibles errores.
-
-#### •	Racetrack
-
-Los tramos tienen una longitud (x unidades de distancia) y un tipo (0 recta, 1 curva).
-
-#### •	ClimaticEvents
-
-Tienen un tipo (0 soleado, 1 lluvia, 2 lluvia torrencial) y la instancia de la clase Race que nos permite llamar el método rainEvent() que simplemente obliga a cada vehiculo a parar en boxes para cambiar sus neumáticos. Cuando se produce una lluvia torrencial se llama al método interrumpirCarrera() del Main para que se interrumpa la carrera de forma ordenada.
+After creating and initializing vehicles and racetracks, this class, using a scheduled thread, starts scheduled tasks every 5 seconds for each vehicle, a task for each printout of the ranking every 4 seconds and a weather event at the time indicated in the main program (if it is rain or pouring rain). After that it waits for the vehicles to finish the race before turning off the executor.
 
 
 
-Raúl Colino Singh – Programación Concurrente 2019-2020
+#### • Score
+
+Shows the positions of the vehicles. For each vehicle the program prints its position, its name, whether it has been overtaken or overtaken (shown with a triangle up ▲ and a triangle down ▼ respectively), lap, distance traveled, distance left to finish the race (except when the extra lap) or if the finish line has already passed, the remaining distance of the extra lap is indicated. It also indicates the speed, the racetrack that is going through, the fuel, and whether it's in the pit.
+
+To show the results, a stream created from a static copy of the Race class vehicle collection is used. In the stream we order the vehicles (according to their position in the race) in such a way that the vehicles that go ahead in the race are the first to be processed. The stream is sequential and not parallel since with so little data to process it is not efficient.
+
+
+#### • Vehicle
+
+Each vehicle has a straight track speed and a curved track speed, a fixed maximum fuel value and name. Throughout the race the distance traveled, fuel, speed, racetrack that is going through and the remaining time in the pits change (0 if you it's not in the pits).
+Before running, the vehicles wait for the judge's signal. Once the race has started, the vehicles move “in turns” and decide if they can advance (depending on whether they have the passage obstructed by vehicles or not), if they have to go to the pits or if they have already finished the race. Final positions are obtained from a CountDownLatch of the judge.
+Vehicles use a synchronized method of the Race class when advancing in such a way that when a vehicle decides whether it can advance x units of distance or not, the other vehicles do not move, thus avoiding possible errors.
+
+#### • Racetrack
+
+The sections have a length (x distance units) and a type (0 lines, 1 curve).
+
+#### • ClimaticEvents
+
+They have a type (0 sunny, 1 rain, 2 torrential rain) and the instance of the Race class that allows it to call the rainEvent () method that simply forces each vehicle to stop at the pit to change its tires. When pouring rain occurs, the _interrumpirCarrera()_ Main method is called to interrupt the race in an appropriate manner.
+
+## License
+
+This project is licensed under the MIT License
+
+
+
 
