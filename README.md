@@ -1,2 +1,3 @@
 # ConcurrentProgramming
-Concurrent Programming exercises
+* Concurrent Programming exercises 
+* Final project: car race simulation
