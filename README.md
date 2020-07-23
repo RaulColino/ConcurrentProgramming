@@ -43,7 +43,7 @@ They have a type (0 sunny, 1 rain, 2 torrential rain) and the instance of the Ra
 
 ## License
 
-This project is licensed under the MIT License
+This project is licensed under the MIT License.
 
 
 
