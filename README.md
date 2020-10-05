@@ -22,7 +22,7 @@ After creating and initializing vehicles and racetracks, this class, using a sch
 
 #### • Score
 
-Shows the positions of the vehicles. For each vehicle the program prints its position, its name, whether it has surpassed someone or has been surpassed by someone (shown with a triangle up ▲ and a triangle down ▼ respectively), lap, distance traveled, distance left to finish the race (except when the extra lap) or if the finish line has already passed, the remaining distance of the extra lap is indicated. It also indicates the speed, the racetrack that is going through, the fuel, and whether it's in the pit.
+Shows the positions of the vehicles. For each vehicle the program prints its position, its name, whether it has overtaken someone or has been overtaken (shown with a triangle up ▲ and a triangle down ▼ respectively), lap, distance traveled, distance left to finish the race (except when the extra lap) or if the finish line has already passed, the remaining distance of the extra lap is indicated. It also indicates the speed, the racetrack that is going through, the fuel, and whether it's in the pit.
 
 To show the results, a stream created from a static copy of the Race class vehicle collection is used. In the stream, we order the vehicles (according to their position in the race) in such a way that the vehicles that go ahead in the race are the first to be processed. The stream is sequential and not parallel since with so little data to process it is not efficient.
 
