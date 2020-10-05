@@ -1,6 +1,6 @@
 # Concurrent programming
 
-Concurrent programming exercises and a final project.
+Concurrent programming exercises and final project.
 ## Final project: Simulation of a  _Formula One_ race
 
 ### Class:
