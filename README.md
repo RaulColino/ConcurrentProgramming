@@ -3,7 +3,7 @@
 Concurrent programming exercises and final project.
 ## Final project: _Formula 1_ race simulator
 ### Description
-The simulation's logic would be as follows: a race circuit is generated from separate parts. Each part has N units of distance. Then, each vehicle with its technical specifications is created. The race judge checks that everyone on the starting grid is ready, and if it's all OK, he gives the starting signal. The vehicles are then invoked every 5 seconds, making it's moves concurrently.
+The simulation's logic would be as follows: a race circuit is generated from separate parts. Each part has N units of distance (1 unit of distance > vehicle length). Then, each vehicle with its technical specifications is created. The race judge checks that everyone on the starting grid is ready, and if it's all OK, he gives the starting signal. The vehicles are then invoked every 5 seconds, making it's moves concurrently.
 
 Vehicles will have to decide whether or not to move to the next unit of distance or, in the case of an overtaking, whether to advance one unit further than their opponent. The control panel and the competitors are provided with "real-time" data such as the current location, the meters to the finish line, distance between cars, etc. Naturally, the advancement of each segment would require the vehicles to use fuel, having to go to the pits to refuel when they are in reserve.
 
