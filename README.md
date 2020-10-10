@@ -9,7 +9,7 @@ Vehicles will have to decide whether or not to move to the next unit of distance
 
 The race finishes when all the vehicles cross the finish line, make an extra lap and end in the pits. The race judge will be responsible for ensuring that all of the above situations has been reached.
 
-### Program classes:
+### Program classes
 
 #### • Main
 
