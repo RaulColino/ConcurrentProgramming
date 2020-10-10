@@ -5,7 +5,7 @@ Concurrent programming exercises and final project.
 ### Description
 The simulation's logic would be as follows: a race circuit is generated from separate parts.Each part has N units of distance. Then, each vehicle with its technical specifications is created. The race judge checks that everyone on the starting grid is ready, and if it's all OK, he gives the starting signal. The vehicles are then invoked every 5 seconds, making it's moves concurrently.
 
-Vehicles will have to decide whether or not to move to the next unit distance or, in the case of an overtaking, whether to advance one unit further than their opponent. The control panel and the competitors are provided with "real-time" data such as the current location, the meters to the finish line, the distance between the cars, etc. Naturally, the advancement of each segment would require the vehicles to use fuel, having to go to the pits to refuel when they are in reserve.
+Vehicles will have to decide whether or not to move to the next unit of distance or, in the case of an overtaking, whether to advance one unit further than their opponent. The control panel and the competitors are provided with "real-time" data such as the current location, the meters to the finish line, the distance between the cars, etc. Naturally, the advancement of each segment would require the vehicles to use fuel, having to go to the pits to refuel when they are in reserve.
 
 The race finishes when all the vehicles cross the finish line, make an extra lap and end in the pits. The race judge will be responsible for ensuring that all of the above situations has been reached.
 
